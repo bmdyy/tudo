@@ -20,7 +20,7 @@
                 $token = generateToken();
 
                 $ret = pg_prepare($db, "createtoken_query", "insert into tokens (uid, token) values ($1, $2)");
-                $ret = pg_execute($db, "createtoken_query", array($row['uid'], $token));
+                $ret = pg_execute($db, "createtoken_query", array($row, $token));
 
                 $success = true;
             }

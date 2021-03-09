@@ -35,7 +35,7 @@
             if (pg_num_rows($ret) === 0) {
                 $invalid_token = true;
             } else {
-                $uid = pg_fetch_row($ret)[0]['uid'];
+                $uid = pg_fetch_row($ret)[1];
                 $newpass = hash('sha256', $password1);
 
                 $ret = pg_prepare($db, "changepassword_query", "update users set password = $1 where uid = $2");

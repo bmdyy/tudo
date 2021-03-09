@@ -1,21 +1,14 @@
 # Info
-Name: TUDO
-
-Author: William Moody (@bmdyy)
-
-Date: 08.03.2021
-
-Languages: PHP, PSQL
-
-Created as preparation for the OSWE/AWAE certification exam.
+* Name: TUDO
+* Author: William Moody (@bmdyy)
+* Date: 08.03.2021
+* Languages: PHP, PSQL
+* Created as preparation for the OSWE/AWAE certification exam.
 
 # Goals
 1. Gain access to user1/2 account (2 possible routes)
-
 2. Gain access to admin account (1 possible route)
-
 3. Remote Shell (3 possible routes)
-
 
 Try to find every way, and create a python script which
 automates the entire process from an unauthenticated user to a remote shell.
@@ -30,28 +23,12 @@ are emulated that often on the virtual machine.
 * user2:user2
 
 ## Virtual Machine
-tudo:tudo (sudo)
+* tudo:tudo (sudo)
 
 # How to begin?
-Two ways:
-1. Clone the repo and run `docker-compose up --build`
-  
-2. Alternatively, you could run it on your own machine by cloning the git repo in /var/www/html,
-and running the following commands:
+1. Clone the repo
+	`git clone https://....`
+2. Go into the directory
+3. Run `RUNME.sh`
 
-* sudo apt-get install apache2
-* sudo apt-get install libapache2-mod-php7.3
-* sudo apt-get install postgresql
-* sudo -u postgres psql
-	  CREATE DATABASE tudo;
-* sudo -u postgres psql -f setup.sql tudo
-* sudo apt-get install php7.3-pgsql
-* wget https://github.com/mozilla/geckodriver/releases/download/v0.29.0/geckodriver-v0.29.0-linux64.tar.gz
-* tar xvf geckodriver-v0.29.0-linux64.tar.gz
-* mv geckodriver /usr/bin
-* sudo apt-get install python3-pip
-* sudo pip3 install selenium
-* crontab -e
-    */1 * * * * /var/www/html/emulate_admin.py
-
-Good luck :)
+If you want to shutdown the container, you may use `KILL.sh` for convenience.
