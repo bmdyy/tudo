@@ -34,11 +34,7 @@ tudo:tudo (sudo)
 
 # How to begin?
 Two ways:
-1. Install VMPlayer, and import the supplied box as an existing virtual machine. Make sure
-you can open up the website in the browser, and then you should be ready to tackle the goals.
-
-Virtual machine: 
-https://drive.google.com/file/d/10xLfjo2p5eIsfJfldm_hkipUqAza3nIm/view?usp=sharing
+1. Clone the repo and run `docker-compose up --build`
   
 2. Alternatively, you could run it on your own machine by cloning the git repo in /var/www/html,
 and running the following commands:
