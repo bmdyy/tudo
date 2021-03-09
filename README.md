@@ -30,7 +30,7 @@ This is intended as a **white-box** penetration test, so open up VSCode, and rea
 * user2:user2
 
 ## How to begin?
-1. Clone the repo: `git clone https://...`
+1. Clone the repo: `git clone https://github.com/bmdyy/tudo.git`
 2. Go into the directory: `cd tudo`
 3. Execute: `./RUNME.sh`
 4. Look in the terminal output and you should see an IP address: `AH00558: apache2: ... 172.17.0.2 ...'`

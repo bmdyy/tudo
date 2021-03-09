@@ -1,10 +1,3 @@
-DROP TABLE IF EXISTS users CASCADE;
-DROP TABLE IF EXISTS tokens CASCADE;
-DROP TABLE IF EXISTS class_posts;
-DROP TABLE IF EXISTS motd_images;
-
--- -- -- -- -- -- -- -- -- --
-
 CREATE TABLE users (
 	uid SERIAL PRIMARY KEY NOT NULL,
 	username TEXT NOT NULL,

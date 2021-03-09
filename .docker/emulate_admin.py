@@ -1,10 +1,6 @@
 #!/usr/bin/python3
 
 # ------SPOILERS------
-# DO NOT READ THIS IF YOU HAVEN'T GOTTEN ACCESS TO THE ADMIN'S
-# ACCOUNT YET.
-
-# --------------------
 # Emulates admin actions necessary for privilege escalation 
 # from a basic user account to admin.
 

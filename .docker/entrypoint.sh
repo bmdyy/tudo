@@ -3,7 +3,7 @@ echo
 echo
 echo "-=-=-=-[ TUDO ]-=-=-=-"
 echo 
-echo b
+echo 
 
 # start and configure psql server
 /etc/init.d/postgresql start
@@ -18,4 +18,4 @@ sudo -u postgres psql -f /var/www/html/.docker/setup.sql tudo
 /usr/sbin/apache2ctl -D FOREGOUND
 
 # stayin alive
-/bin/bash -c 'while [[ 1 ]]; do sleep 60 || break; done';
+/bin/bash -c 'while [[ 1 ]]; do sleep 60; done';
