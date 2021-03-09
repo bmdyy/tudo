@@ -38,7 +38,7 @@ Two ways:
 you can open up the website in the browser, and then you should be ready to tackle the goals.
 
 Virtual machine: 
-<google drive link>
+https://drive.google.com/file/d/10xLfjo2p5eIsfJfldm_hkipUqAza3nIm/view?usp=sharing
   
 2. Alternatively, you could run it on your own machine by cloning the git repo in /var/www/html,
 and running the following commands:
