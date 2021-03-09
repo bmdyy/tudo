@@ -1,3 +1,5 @@
+![TUDO Favicon](https://github.com/bmdyy/tudo/blob/favicon.ico?raw=true)
+
 # Info
 * Name: TUDO
 * Author: William Moody (@bmdyy)
