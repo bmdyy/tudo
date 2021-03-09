@@ -20,7 +20,6 @@ Created as preparation for the OSWE/AWAE certification exam.
 Try to find every way, and create a python script which
 automates the entire process from an unauthenticated user to a remote shell.
 
-
 The attack for step 2 may take up to a minute to complete, since the admin's actions
 are emulated that often on the virtual machine.
 
