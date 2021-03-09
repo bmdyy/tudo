@@ -1,36 +1,41 @@
 ![TUDO Favicon](https://github.com/bmdyy/tudo/blob/main/favicon.ico?raw=true)
 
-# Info
-* Name: TUDO
+# TUDO (Vulnerable PHP Web-App)
+
+## MetaData
 * Author: William Moody (@bmdyy)
-* Date: 08.03.2021
-* Languages: PHP, PSQL
+* Started: 08.03.2021
+* Languages: PHP, PostgreSQL
 * Created as preparation for the OSWE/AWAE certification exam.
 
-# Goals
-1. Gain access to user1/2 account (2 possible routes)
-2. Gain access to admin account (1 possible route)
-3. Remote Shell (3 possible routes)
+## Goals
+This is an intentionally vulnerable web application. There are 3 steps to complete the challenge, and multiple ways
+to complete each step.
 
-Try to find every way, and create a python script which
-automates the entire process from an unauthenticated user to a remote shell.
+1. You must gain access to either user1, or user2's account (2 possible ways)
+2. Next, gain access to the admin account (1 possible ways)
+3. Finally, find a way to remotely execute arbitrary commands (3 possible ways)
 
-The attack for step 2 may take up to a minute to complete, since the admin's actions
-are emulated that often on the virtual machine.
+I would suggest to try and find every way to get the most out of TUDO.
+Bonus: Create a python script which chains together all 3 steps for a complete POC.
 
-# Credentials
-## Web App
+*Note: The attack for step 2 may take up to a minute to complete, since the admin's actions
+are emulated with a cron job every minute on the target machine.*
+
+This is intended as a **white-box** penetration test, so open up VSCode, and read.
+
+## Default Credentials
 * admin:admin
 * user1:user1
 * user2:user2
 
-## Virtual Machine
-* tudo:tudo (sudo)
+## How to begin?
+1. Clone the repo: `git clone https://...`
+2. Go into the directory: `cd tudo`
+3. Execute: `./RUNME.sh`
+4. Look in the terminal output and you should see an IP address: `AH00558: apache2: ... 172.17.0.2 ...'`
+That is the target!
 
-# How to begin?
-1. Clone the repo
-	`git clone https://....`
-2. Go into the directory
-3. Run `RUNME.sh`
+*Note: If you want to shutdown the container, you may use `KILL.sh` for convenience.*
 
-If you want to shutdown the container, you may use `KILL.sh` for convenience.
+**Finally, good luck :)**
