@@ -3,7 +3,7 @@ echo
 echo
 echo "-=-=-=-[ TUDO ]-=-=-=-"
 echo 
-echo b
+echo 
 
 # start and configure psql server
 /etc/init.d/postgresql start
