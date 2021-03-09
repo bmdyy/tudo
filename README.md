@@ -1,4 +1,4 @@
-![TUDO Favicon](https://github.com/bmdyy/tudo/blob/favicon.ico?raw=true)
+![TUDO Favicon](https://github.com/bmdyy/tudo/blob/main/favicon.ico?raw=true)
 
 # Info
 * Name: TUDO
