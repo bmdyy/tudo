@@ -1,5 +1,5 @@
 # Solutions
-In total there are 6 unique ways to solve this machine. I recommend understanding all 6 to gain the most from TUDO. In this folder you may find my PoC scripts (python3) for every vulnerability **(work in progress)**.
+In total there are 6 unique ways to solve this machine. I recommend understanding all 6 to gain the most from TUDO. In this folder you may find my PoC scripts (python3) for every vulnerability *(work in progress)*.
 
 ## Step 1 - Authentication Bypass
 #### 1. Dumping password reset token via Blind SQLi
