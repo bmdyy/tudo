@@ -38,4 +38,8 @@ That is the target!
 
 *Note: If you want to shutdown the container, you may use `KILL.sh` for convenience.*
 
-**Finally, good luck :)**
+## Solutions
+There are solutions for all (intended) ways to solve this machine in `/solution`.
+All scripts are written in python3.
+
+**And finally, good luck!**
