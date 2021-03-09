@@ -18,12 +18,10 @@ Created as preparation for the OSWE/AWAE certification exam.
 
 
 Try to find every way, and create a python script which
-
 automates the entire process from an unauthenticated user to a remote shell.
 
 
 The attack for step 2 may take up to a minute to complete, since the admin's actions
-
 are emulated that often on the virtual machine.
 
 # Credentials
@@ -38,7 +36,6 @@ tudo:tudo (sudo)
 # How to begin?
 Two ways:
 1. Install VMPlayer, and import the supplied box as an existing virtual machine. Make sure
-
 you can open up the website in the browser, and then you should be ready to tackle the goals.
 
 Virtual machine: 
