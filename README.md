@@ -7,6 +7,8 @@ Date: 08.03.2021
 
 Languages: PHP, PSQL
 
+Created as preparation for the OSWE/AWAE certification exam.
+
 # Goals
 1. Gain access to user1/2 account (2 possible routes)
 
