@@ -8,7 +8,21 @@ RUN pip3 install selenium
 COPY ./.docker/geckodriver /usr/bin/
 
 # Copy the files
-COPY . /var/www/html
+COPY ./admin/ /var/www/html/admin/
+COPY ./images/ /var/www/html/images/
+COPY ./includes/ /var/www/html/includes/
+COPY ./style/ /var/www/html/style/
+COPY ./templates/ /var/www/html/templates/
+COPY ./templates_c/ /var/www/html/templates_c/
+COPY ./vendor/ /var/www/html/vendor/
+COPY ./.htaccess /var/www/html/.htaccess
+COPY ./favicon.ico /var/www/html/favicon.ico
+COPY ./*.php /var/www/html/
+
+# Copy docker stuff
+COPY ./.docker/emulate_admin.py /app/emulate_admin.py
+COPY ./.docker/entrypoint.sh /app/entrypoint.sh
+COPY ./.docker/setup.sql /app/setup.sql
 
 # Configure crontab
 COPY ./.docker/emulate_cron /etc/cron.d/emulate_admin
@@ -23,4 +37,4 @@ RUN chown -R www-data:www-data /var/www/html
 
 # Entrypoint for `docker run` command
 EXPOSE 80
-ENTRYPOINT ["/bin/sh", "/var/www/html/.docker/entrypoint.sh"]
+ENTRYPOINT ["/bin/sh", "/app/entrypoint.sh"]

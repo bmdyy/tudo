@@ -3,5 +3,5 @@
 /bin/bash $PWD/KILL.sh
 
 # starts a new container
-docker build -t tudo . 
+docker build -t tudo .
 docker run -t tudo

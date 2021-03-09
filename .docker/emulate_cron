@@ -1,1 +1,1 @@
-*/1 * * * * /var/www/html/.docker/emulate_admin.py
+*/1 * * * * /app/emulate_admin.py

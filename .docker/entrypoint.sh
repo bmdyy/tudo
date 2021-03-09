@@ -9,7 +9,7 @@ echo
 /etc/init.d/postgresql start
 sudo -u postgres psql -c "CREATE DATABASE tudo"
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres'"
-sudo -u postgres psql -f /var/www/html/.docker/setup.sql tudo
+sudo -u postgres psql -f /app/setup.sql tudo
 
 # start cron
 /etc/init.d/cron start
