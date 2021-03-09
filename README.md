@@ -38,5 +38,7 @@ Install VMPlayer, and import the supplied box as an existing virtual machine. Ma
 
 you can open up the website in the browser, and then you should be ready to tackle the goals.
 
+Virtual machine: /virtual-machine
+
 
 Good luck :)
