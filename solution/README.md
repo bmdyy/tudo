@@ -16,7 +16,7 @@ PoC: `token_spray.py`, `token_list.php`
 #### 1. XSS (Session riding)
 The 'Description' field of every user (modifiable in 'Profile') is not filtered properly and can execute HTML code when displayed on the admin's home page. We can exploit this to steal the admin's session cookie when he logs in (every minute thanks to a cron job)
 
-PoC: `-`
+PoC: `steal_cookie.py`
 
 ## Step 3 - RCE
 #### 1. Server Side Template Injection
