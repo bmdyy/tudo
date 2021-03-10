@@ -10,7 +10,7 @@ PoC: `dump_token.py`
 #### 2. Guessing password reset token via token spray (known random seed)
 The function used when creating password reset tokens, 'generateToken()', uses a predictable seed for rand. Because of this, we can generate a list of possible tokens and try them all until we got the right one.
 
-PoC: `-`
+PoC: `token_spray.py`, `token_list.php`
 
 ## Step 2 - Privilege Escalation
 #### 1. XSS (Session riding)
