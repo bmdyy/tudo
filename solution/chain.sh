@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# @title  Token Spray -> XSS -> SSTI
+# @title  Chains together vulnerabilities for TUDO
 # @author William Moody
 # @date   10.03.2021
 
