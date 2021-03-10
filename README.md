@@ -38,7 +38,7 @@ That is the target!
 
 *Note: If you want to shutdown the container, you may use `KILL.sh` for convenience.*
 
-*Note 2: I included SHELL.sh as a quick way to run a shell for the docker container*
+*Note 2: I included `SHELL.sh` as a quick way to run a shell for the docker container*
 
 ## Solutions
 There are solutions for all (intended) ways to solve this machine in `/solution`.
