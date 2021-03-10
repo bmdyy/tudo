@@ -27,7 +27,7 @@ PoC: `set_motd.py`
 #### 2. Image Upload Bypass (Upload .phar)
 The admin may upload images to display below the MoTD. The filter in place may be bypassed to allow us to upload code which executes server side, such as a .phar file.
 
-PoC: `-`
+PoC: `image_upload.py`
 
 #### 3. PHP Deserialization
 The admin may import users to the system from serialized PHP objects. We can pass any serialized object in fact, and the class 'Log' writes to an arbitrary file in the '\_\_destruct()' function, so we can use this to write executable code to the web root and then run it.

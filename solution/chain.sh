@@ -50,7 +50,7 @@ if [ $(($4%4)) -eq 1 ]; then
 	python3 set_motd.py $1 $2 $phpsessid
 
 elif [ $(($4%4)) -eq 2 ]; then
-	echo "coming soon..."
+	python3 image_upload.py $1 $2 $phpsessid
 
 else
 	python3 deserialize.py $1 $2 $phpsessid

