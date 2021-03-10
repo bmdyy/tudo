@@ -22,7 +22,7 @@ PoC: `steal_cookie.py`
 #### 1. Server Side Template Injection
 The admin may set a message of the day which is shown to every user on the home screen. This MoTD is rendered as a template using [Smarty](https://www.smarty.net/), which is vulnerable to SSTI.
 
-PoC: `-`
+PoC: `set_motd.py`
 
 #### 2. Image Upload Bypass (Upload .phar)
 The admin may upload images to display below the MoTD. The filter in place may be bypassed to allow us to upload code which executes server side, such as a .phar file.
