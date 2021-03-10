@@ -32,7 +32,7 @@ PoC: `-`
 #### 3. PHP Deserialization
 The admin may import users to the system from serialized PHP objects. We can pass any serialized object in fact, and the class 'Log' writes to an arbitrary file in the '\_\_destruct()' function, so we can use this to write executable code to the web root and then run it.
 
-PoC: `-`
+PoC: `deserialize.php`, `serialize.php`
 
 ## Full Chain
-A shell script which chains together a selection of the three vulnerabilities is included (`chain.sh`). Specifically, it chains together the Token Spray, XSS, and SSTI attacks.
+A shell script which can demonstrate all 6 vulnerability chains is included (`chain.sh`).
