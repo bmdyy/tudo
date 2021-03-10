@@ -6,7 +6,7 @@
 	// Token generating code from include/utils.php
 	function generateToken($seed) {
 		srand($seed);
-	    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_';
+		$chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_';
 		$ret = '';
 		for ($i = 0; $i < 32; $i++) {
 			$ret .= $chars[rand(0,strlen($chars)-1)];
