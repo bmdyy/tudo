@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-# @title TUDO Authentication Bypass #1
+# @title  TUDO Authentication Bypass #1
 # @author William Moody
-# @date 09.03.2021
+# @date   09.03.2021
 
 import requests
 import sys

@@ -37,9 +37,9 @@
             <h1>My Profile:</h1>
             <form action="profile.php" method="POST">
                 <label for="username">Username: </label>
-                <input name="username" value="<?php echo $row[1]; ?>" readonly><br><br>
+                <input name="username" value="<?php echo $row[1]; ?>" disabled><br><br>
                 <label for="password">Password: </label>
-                <input name="password" value="<?php echo $row[2]; ?>" readonly><br><br>
+                <input name="password" value="<?php echo $row[2]; ?>" disabled><br><br>
                 <label for="description">Description: </label>
                 <input name="description" value="<?php echo $row[3]; ?>"><br><br>
                 <input type="submit" value="Update"> 
