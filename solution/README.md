@@ -35,4 +35,4 @@ The admin may import users to the system from serialized PHP objects. We can pas
 PoC: `-`
 
 ## Full Chain
-A shell script which chains together the three is included (`chain.sh`). Specifically, it chains together the Token Spray, XSS, and SSTI attacks.
+A shell script which chains together a selection of the three vulnerabilities is included (`chain.sh`). Specifically, it chains together the Token Spray, XSS, and SSTI attacks.
