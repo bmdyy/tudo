@@ -53,5 +53,5 @@ elif [ $(($4%4)) -eq 2 ]; then
 	echo "coming soon..."
 
 else
-	echo "comming"
+	python3 deserialize.py $1 $2 $phpsessid
 fi
