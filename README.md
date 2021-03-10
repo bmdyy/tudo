@@ -41,7 +41,6 @@ That is the target!
 *Note 2: I included `SHELL.sh` as a quick way to run a shell for the docker container*
 
 ## Solutions
-There are solutions for all (intended) ways to solve this machine in `/solution`.
-All scripts are written in python3.
+There are explanations and solutions for all (intended) ways to solve this machine in `/solution`.
 
 **And finally, good luck!**
