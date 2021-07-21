@@ -55,7 +55,8 @@
                     require_once 'vendor/autoload.php';
                     $smarty = new Smarty();
                     $smarty->assign("username", $_SESSION['username']);
-                    $smarty->debugging = true; 
+                    $smarty->debugging = true;
+                    $smarty->force_compile = true;
                     echo $smarty->fetch("motd.tpl").'<br>';
 
                     $ret = pg_query($db, "select * from motd_images order by iid desc limit 3;");
