@@ -23,6 +23,7 @@ COPY ./*.php /var/www/html/
 COPY ./.docker/emulate_admin.py /app/emulate_admin.py
 COPY ./.docker/entrypoint.sh /app/entrypoint.sh
 COPY ./.docker/setup.sql /app/setup.sql
+RUN chmod a+r /app/setup.sql
 
 # Configure crontab
 COPY ./.docker/emulate_cron /etc/cron.d/emulate_admin
