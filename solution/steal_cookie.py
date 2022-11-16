@@ -6,7 +6,6 @@
 
 import requests
 import sys
-import subprocess
 import socket
 
 if len(sys.argv) != 5:
