@@ -14,7 +14,7 @@ to complete each step.
 
 1. You must gain access to either user1, or user2's account (2 possible ways)
 2. Next, gain access to the admin account (1 possible ways)
-3. Finally, find a way to remotely execute arbitrary commands (4 possible ways)
+3. Finally, find a way to remotely execute arbitrary commands (5 possible ways)
 
 I would suggest to try and find every way to get the most out of TUDO.
 Bonus: Create a python script which chains together all 3 steps for a complete POC.
