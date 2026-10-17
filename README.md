@@ -12,7 +12,7 @@ There are **three steps** to complete the challenge, and multiple ways
 to complete each step.
 
 - **Authentication bypass:** Gain access to either `user1` or `user2`'s account (two possible ways).
-- **Privilege escalation:** Gain access to the `admin` account (one possible way).
+- **Privilege escalation:** Gain access to the `admin` account (two possible ways &ndash; one of which was originally intended).
 - **Remote code execution:** Find a way to remotely execute arbitrary commands (five possible ways &ndash; three of which were originally intended).
 
 To make the most of **TUDO**, it is recommended to try and find all eight vulnerabilities, and to create a python script which chains three steps for a complete POC (_Hint: this is what they will require you to do on the exam_).
