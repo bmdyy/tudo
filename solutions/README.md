@@ -186,3 +186,13 @@ bash: cannot set terminal process group (132): Inappropriate ioctl for device
 bash: no job control in this shell
 postgres@fc7fb3a7332b:~/18/docker$
 ```
+#### Unauthenticated privilege escalation to admin &mdash; missing access control
+
+`admin/import_user.php` is missing the authentication check present in `admin/update_motd.php` (there is no `session_start()` and no `isadmin` check), and `/admin/` is not otherwise protected, so the endpoint is reachable with no authentication. Because `users.username` has no `UNIQUE` constraint and `login.php` grants admin based on the username string, an attacker can insert a second `admin` row with a password hash of their choosing and then log in as `admin`, skipping the intended authentication bypass and privilege escalation steps entirely. The same missing check also makes RCE-2 and RCE-3 reachable pre-authentication.
+
+```console
+$ python3 unintended/unauthAdmin.py 'http://localhost:8000'
+[*] Injected admin row with password: <random>
+[*] Logged in as admin
+[+] Got admin: admin / <random> (PHPSESSID=<session>)
+```
