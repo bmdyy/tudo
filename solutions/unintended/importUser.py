@@ -1,4 +1,4 @@
-# TUDO Unauthenticated privilege escalation - "unauth admin via import_user.php"
+# Authentication Bypass - Missing Access Control in import_user.php
 # xpnt0
 # October 2026
 
